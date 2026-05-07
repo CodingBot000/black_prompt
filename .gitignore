@@ -1,0 +1,65 @@
+# OS and editor files
+.DS_Store
+**/.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment and local-only config
+.env
+.env.*
+!.env.example
+*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Root-level temporary agent notes
+progress.md
+
+# Frontend dependencies
+frontend/node_modules/
+
+# Frontend build output
+frontend/dist/
+frontend/dist-ssr/
+
+# Frontend test and browser verification artifacts
+frontend/output/
+frontend/coverage/
+frontend/playwright-report/
+frontend/test-results/
+
+# Frontend caches and generated metadata
+frontend/.vite/
+frontend/.vite-temp/
+frontend/.cache/
+frontend/.eslintcache
+frontend/*.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+
+# Package manager caches
+.npm/
+.pnpm-store/
+.yarn/
+!.yarn/releases/
+!.yarn/plugins/
+!.yarn/sdks/
+!.yarn/versions/
+
+# Keep all project planning/design documents tracked.
+# Keep this block last so general ignore rules above do not exclude docs contents.
+!docs/
+!docs/**

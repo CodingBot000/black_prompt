@@ -1,0 +1,432 @@
+.app-shell {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  min-height: 100dvh;
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+  background:
+    linear-gradient(180deg, rgba(8, 13, 20, 0.98), rgba(5, 7, 11, 1)),
+    var(--bg-main);
+}
+
+.top-status-bar {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) auto minmax(270px, 380px) minmax(280px, 380px);
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(5, 8, 13, 0.96);
+}
+
+.brand-block {
+  display: grid;
+  gap: 2px;
+}
+
+.brand-block strong {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.brand-block span,
+.run-state,
+.selected-region-line span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.status-controls,
+.resource-panel,
+.pill-row,
+.command-actions,
+.modal-actions,
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.speed-button {
+  min-width: 74px;
+  padding: 0 12px;
+}
+
+.resource-panel {
+  justify-content: flex-start;
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 32px;
+  padding: 6px 8px;
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
+}
+
+.stat-pill span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.stat-pill-success strong {
+  color: var(--success);
+}
+
+.stat-pill-warning strong {
+  color: var(--warning);
+}
+
+.stat-pill-danger strong {
+  color: var(--danger);
+}
+
+.top-bars {
+  display: grid;
+  gap: 5px;
+}
+
+.progress {
+  display: grid;
+  gap: 4px;
+}
+
+.progress-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.progress-row strong {
+  color: var(--text-main);
+}
+
+.progress-track {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--info);
+}
+
+.progress-success .progress-track span {
+  background: var(--success);
+}
+
+.progress-warning .progress-track span {
+  background: var(--warning);
+}
+
+.progress-danger .progress-track span {
+  background: var(--danger);
+}
+
+.game-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(310px, 360px);
+  min-height: 0;
+}
+
+.desktop-side-panel {
+  min-height: 0;
+  overflow: auto;
+  border-left: 1px solid var(--line-soft);
+  background: rgba(6, 11, 18, 0.82);
+}
+
+.panel-section {
+  padding: 14px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.panel-description {
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.bottom-command-bar {
+  display: grid;
+  grid-template-columns: minmax(170px, 240px) minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-top: 1px solid var(--line-soft);
+  background: rgba(5, 8, 13, 0.96);
+}
+
+.selected-region-line {
+  display: grid;
+  gap: 3px;
+}
+
+.selected-region-line strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.operation-panel {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+  min-width: 0;
+}
+
+.command-actions {
+  grid-column: 1 / -1;
+}
+
+.operation-button {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  min-height: 52px;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.operation-button span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.operation-button small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+.risk-high {
+  border-color: rgba(255, 92, 122, 0.4);
+}
+
+.risk-medium {
+  border-color: rgba(255, 204, 102, 0.38);
+}
+
+.tabs {
+  margin-bottom: 14px;
+}
+
+.tabs button.is-active,
+.new-game-grid button.is-active {
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.ability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.ability-card {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.ability-card.is-purchased {
+  border-color: rgba(92, 255, 199, 0.5);
+}
+
+.ability-card header span {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.event-log ol,
+.top-region-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.log-entry {
+  padding: 8px;
+  border-left: 3px solid var(--info);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.log-entry p {
+  margin: 3px 0 0;
+  font-size: 12px;
+}
+
+.log-date {
+  display: block;
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+.log-warning {
+  border-color: var(--warning);
+}
+
+.log-critical {
+  border-color: var(--danger);
+}
+
+.log-success {
+  border-color: var(--success);
+}
+
+.new-game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 10px;
+}
+
+.new-game-grid button {
+  display: grid;
+  gap: 6px;
+  min-height: 112px;
+  padding: 12px;
+  text-align: left;
+}
+
+.new-game-grid span {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.choice-list {
+  display: grid;
+  gap: 8px;
+}
+
+.help-copy p {
+  line-height: 1.55;
+}
+
+.rotate-overlay {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .top-status-bar {
+    grid-template-columns: minmax(130px, 190px) auto minmax(240px, 1fr);
+  }
+
+  .top-bars {
+    display: none;
+  }
+
+  .bottom-command-bar {
+    grid-template-columns: 160px minmax(0, 1fr);
+  }
+
+  .command-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    overflow: hidden;
+  }
+
+  .app-shell {
+    grid-template-rows: auto minmax(0, 1fr) auto;
+  }
+
+  .top-status-bar {
+    grid-template-columns: 138px auto minmax(190px, 1fr);
+    gap: 8px;
+    padding: 6px 8px;
+  }
+
+  .brand-block strong {
+    font-size: 14px;
+  }
+
+  .brand-block span,
+  .run-state {
+    font-size: 10px;
+  }
+
+  .resource-panel .stat-pill {
+    min-height: 28px;
+    padding: 4px 6px;
+  }
+
+  .game-main {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .desktop-side-panel {
+    display: none;
+  }
+
+  .bottom-command-bar {
+    grid-template-columns: minmax(118px, 150px) minmax(0, 1fr) auto;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .operation-panel {
+    grid-template-columns: repeat(3, minmax(82px, 1fr));
+    gap: 5px;
+  }
+
+  .operation-button {
+    min-height: 40px;
+    padding: 4px 6px;
+  }
+
+  .operation-button small {
+    display: none;
+  }
+
+  .command-actions {
+    display: grid;
+    grid-column: auto;
+    grid-template-columns: repeat(3, minmax(58px, 1fr));
+    gap: 5px;
+  }
+
+  .command-actions button {
+    min-height: 34px;
+    padding: 0 6px;
+    font-size: 11px;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 900px) {
+  .rotate-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: #05070b;
+    text-align: center;
+  }
+}
