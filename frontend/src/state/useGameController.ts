@@ -15,6 +15,7 @@ export interface GameController {
   toggleRunning: () => void;
   toggleSpeed: () => void;
   startNewGame: (regionId: RegionId) => void;
+  resolveEventChoiceAndResume: (eventId: string, choiceId: string) => void;
   loadSavedGame: () => string | null;
   saveCurrentGame: () => void;
 }
@@ -80,6 +81,15 @@ export function useGameController(): GameController {
     }));
   }, []);
 
+  const resolveEventChoiceAndResume = useCallback((eventId: string, choiceId: string) => {
+    dispatch({ type: "RESOLVE_EVENT_CHOICE", payload: { eventId, choiceId } });
+    setUi((current) => ({
+      ...current,
+      activeModal: null,
+      isRunning: true,
+    }));
+  }, []);
+
   const loadSavedGame = useCallback(() => {
     const result = loadGame();
     if (!result.game) return result.errorKey ?? "error.noSave";
@@ -108,6 +118,7 @@ export function useGameController(): GameController {
     toggleRunning,
     toggleSpeed,
     startNewGame,
+    resolveEventChoiceAndResume,
     loadSavedGame,
     saveCurrentGame,
   };

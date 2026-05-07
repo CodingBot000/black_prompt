@@ -156,7 +156,7 @@ export function AppShell() {
         <EventChoiceModal
           game={game}
           locale={locale}
-          onResolve={(eventId, choiceId) => dispatch({ type: "RESOLVE_EVENT_CHOICE", payload: { eventId, choiceId } })}
+          onResolve={controller.resolveEventChoiceAndResume}
         />
       ) : null}
       {ui.activeModal === "ending" ? <EndingModal game={game} locale={locale} onNewGame={() => controller.openModal("newGame")} /> : null}
