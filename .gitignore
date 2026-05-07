@@ -45,6 +45,7 @@ frontend/test-results/
 # Frontend caches and generated metadata
 frontend/.vite/
 frontend/.vite-temp/
+frontend/.vercel/
 frontend/.cache/
 frontend/.eslintcache
 frontend/*.tsbuildinfo
